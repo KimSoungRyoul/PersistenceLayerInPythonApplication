@@ -1,0 +1,77 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="98" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ourVersions">
+        <value>
+          <list size="3">
+            <item index="0" class="java.lang.String" itemvalue="2.7" />
+            <item index="1" class="java.lang.String" itemvalue="3.5" />
+            <item index="2" class="java.lang.String" itemvalue="3.8" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="41">
+            <item index="0" class="java.lang.String" itemvalue="django-allauth" />
+            <item index="1" class="java.lang.String" itemvalue="pathspec" />
+            <item index="2" class="java.lang.String" itemvalue="factory-boy" />
+            <item index="3" class="java.lang.String" itemvalue="mypy" />
+            <item index="4" class="java.lang.String" itemvalue="cffi" />
+            <item index="5" class="java.lang.String" itemvalue="aws-sam-translator" />
+            <item index="6" class="java.lang.String" itemvalue="pre-commit" />
+            <item index="7" class="java.lang.String" itemvalue="jsonpickle" />
+            <item index="8" class="java.lang.String" itemvalue="requests" />
+            <item index="9" class="java.lang.String" itemvalue="importlib-metadata" />
+            <item index="10" class="java.lang.String" itemvalue="pytest-socket" />
+            <item index="11" class="java.lang.String" itemvalue="docker" />
+            <item index="12" class="java.lang.String" itemvalue="cfn-lint" />
+            <item index="13" class="java.lang.String" itemvalue="freezegun" />
+            <item index="14" class="java.lang.String" itemvalue="certifi" />
+            <item index="15" class="java.lang.String" itemvalue="django-model-utils" />
+            <item index="16" class="java.lang.String" itemvalue="urllib3" />
+            <item index="17" class="java.lang.String" itemvalue="djangorestframework" />
+            <item index="18" class="java.lang.String" itemvalue="pydantic" />
+            <item index="19" class="java.lang.String" itemvalue="botocore" />
+            <item index="20" class="java.lang.String" itemvalue="identify" />
+            <item index="21" class="java.lang.String" itemvalue="pytest" />
+            <item index="22" class="java.lang.String" itemvalue="django-crispy-forms" />
+            <item index="23" class="java.lang.String" itemvalue="orjson" />
+            <item index="24" class="java.lang.String" itemvalue="packaging" />
+            <item index="25" class="java.lang.String" itemvalue="pathlib2" />
+            <item index="26" class="java.lang.String" itemvalue="django-debug-toolbar" />
+            <item index="27" class="java.lang.String" itemvalue="appnope" />
+            <item index="28" class="java.lang.String" itemvalue="attrs" />
+            <item index="29" class="java.lang.String" itemvalue="tqdm" />
+            <item index="30" class="java.lang.String" itemvalue="boto3" />
+            <item index="31" class="java.lang.String" itemvalue="regex" />
+            <item index="32" class="java.lang.String" itemvalue="watchdog" />
+            <item index="33" class="java.lang.String" itemvalue="faker" />
+            <item index="34" class="java.lang.String" itemvalue="fabric" />
+            <item index="35" class="java.lang.String" itemvalue="virtualenv" />
+            <item index="36" class="java.lang.String" itemvalue="responses" />
+            <item index="37" class="java.lang.String" itemvalue="isort" />
+            <item index="38" class="java.lang.String" itemvalue="jsonpatch" />
+            <item index="39" class="java.lang.String" itemvalue="mysqlclient" />
+            <item index="40" class="java.lang.String" itemvalue="models" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
