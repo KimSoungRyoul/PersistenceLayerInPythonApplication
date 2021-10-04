@@ -8,6 +8,7 @@ authors = ["KimSoungRyoul <KimSoungRyoul@gmail.com>"]
 python = "^3.8"
 fastapi = "^0.68.1"
 cookiecutter = "^1.7.3"
+SQLAlchemy = "^1.4.25"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

@@ -5,6 +5,10 @@ from app.schemas.item import ItemCreate, ItemUpdate
 from app.tests.utils.user import create_random_user
 from app.tests.utils.utils import random_lower_string
 
+import logging
+logging.basicConfig()
+logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
+
 
 def test_create_item(db: Session) -> None:
     title = random_lower_string()
@@ -24,6 +28,22 @@ def test_get_item(db: Session) -> None:
     user = create_random_user(db)
     item = crud.item.create_with_owner(db=db, obj_in=item_in, owner_id=user.id)
     stored_item = crud.item.get(db=db, id=item.id)
+
+
+    with db as session:
+        print("---------------------------------")
+        #item = crud.item.create_with_owner(db=db, obj_in=item_in, owner_id=user.id)
+
+        print("------sdf-------------")
+        a = crud.item.get(db=session,id=item.id)
+
+        a = crud.item.get(db=session,id=item.id)
+        #print(a)
+        print("---------------------------------")
+        b = crud.item.get_multi(db=session, limit=100)
+        #print(b)
+        print("---------------------------------")
+
     assert stored_item
     assert item.id == stored_item.id
     assert item.title == stored_item.title

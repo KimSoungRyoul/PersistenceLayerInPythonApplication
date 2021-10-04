@@ -30,5 +30,9 @@ class CRUDItem(CRUDBase[Item, ItemCreate, ItemUpdate]):
             .all()
         )
 
+    def asdf(self, db:Session):
+        ...
+
+
 
 item = CRUDItem(Item)

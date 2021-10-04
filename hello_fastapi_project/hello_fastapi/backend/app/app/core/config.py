@@ -9,8 +9,8 @@ class Settings(BaseSettings):
     SECRET_KEY: str = secrets.token_urlsafe(32)
     # 60 minutes * 24 hours * 8 days = 8 days
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 8
-    SERVER_NAME: str
-    SERVER_HOST: AnyHttpUrl
+    SERVER_NAME: str = "localhost"
+    SERVER_HOST: AnyHttpUrl = "http://127.0.0.1"
     # BACKEND_CORS_ORIGINS is a JSON-formatted list of origins
     # e.g: '["http://localhost", "http://localhost:4200", "http://localhost:3000", \
     # "http://localhost:8080", "http://local.dockertoolbox.tiangolo.com"]'
@@ -24,8 +24,8 @@ class Settings(BaseSettings):
             return v
         raise ValueError(v)
 
-    PROJECT_NAME: str
-    SENTRY_DSN: Optional[HttpUrl] = None
+    PROJECT_NAME: str = "hello_fastapi"
+    SENTRY_DSN: Optional[HttpUrl] = ''
 
     @validator("SENTRY_DSN", pre=True)
     def sentry_dsn_can_be_blank(cls, v: str) -> Optional[str]:
@@ -33,11 +33,17 @@ class Settings(BaseSettings):
             return None
         return v
 
-    POSTGRES_SERVER: str
-    POSTGRES_USER: str
-    POSTGRES_PASSWORD: str
-    POSTGRES_DB: str
-    SQLALCHEMY_DATABASE_URI: Optional[PostgresDsn] = None
+    POSTGRES_SERVER: str ="127.0.0.1:5432"
+    POSTGRES_USER: str = "postgres"
+    POSTGRES_PASSWORD: str = "1234"
+    POSTGRES_DB: str ="hello_fastapi_db"
+    SQLALCHEMY_DATABASE_URI: Optional[PostgresDsn] = PostgresDsn.build(
+            scheme="postgresql",
+            user="postgres",
+            password="1234",
+            host="127.0.0.1:5432",
+            path="/hello_fastapi_db",
+        )
 
     @validator("SQLALCHEMY_DATABASE_URI", pre=True)
     def assemble_db_connection(cls, v: Optional[str], values: Dict[str, Any]) -> Any:
@@ -45,10 +51,10 @@ class Settings(BaseSettings):
             return v
         return PostgresDsn.build(
             scheme="postgresql",
-            user=values.get("POSTGRES_USER"),
-            password=values.get("POSTGRES_PASSWORD"),
-            host=values.get("POSTGRES_SERVER"),
-            path=f"/{values.get('POSTGRES_DB') or ''}",
+            user="postgres",
+            password="1234",
+            host="127.0.0.1",
+            path="/hello_fastapi_db",
         )
 
     SMTP_TLS: bool = True
@@ -78,8 +84,8 @@ class Settings(BaseSettings):
         )
 
     EMAIL_TEST_USER: EmailStr = "test@example.com"  # type: ignore
-    FIRST_SUPERUSER: EmailStr
-    FIRST_SUPERUSER_PASSWORD: str
+    FIRST_SUPERUSER: EmailStr = "test@example.com"  # type: ignore
+    FIRST_SUPERUSER_PASSWORD: str = "1234"
     USERS_OPEN_REGISTRATION: bool = False
 
     class Config:
